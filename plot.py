@@ -7,8 +7,6 @@ This program uses matplotlib to plot various graphs
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-
 def infinity_plot():
     s = 2
     t = np.linspace(0, 2*np.pi, 1000)
@@ -27,15 +25,25 @@ def chevron():
     plt.plot(x, y)
     plt.show()
 
+def heart():
+    t = np.linspace(0, 2*np.pi, 1000)
+
+    x = 16 * np.sin(t)**3
+    y = 16 * np.cos(t) - 5 * np.cos(2 * t) - 2 * np.cos(3 * t) - np.cos(4 * t)
+    plt.plot(x, y)
+    plt.show()
+
 class Main:
     plot_map = {
         1: infinity_plot,
-        2: chevron
+        2: chevron,
+        3: heart
     }
 
     print("Welcome to my cool graphs! Pick the number of the graph you would like to see!")
     print(f"1: Infinity Symbol")
     print(f"2: Chevron Symbol")
+    print(f"3: Heart Symbol")
     user_input = int(input("Enter the number of the shape you want: "))
 
     if user_input in plot_map:
