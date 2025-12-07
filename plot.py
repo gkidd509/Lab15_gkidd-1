@@ -7,8 +7,11 @@ This program uses matplotlib to plot various graphs
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 2 * np.pi, 200)
-y = np.sin(x)
+S = 2
+t = np.linspace(0, 2*np.pi, 1000)
+
+x = np.power(np.cos(t), S) * np.cos(t)
+y = np.power(np.cos(t), S) * np.sin(t)
 
 fig, ax = plt.subplots()
 ax.plot(x, y)
